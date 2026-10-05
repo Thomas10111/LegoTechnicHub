@@ -11,6 +11,8 @@ the camera and neural network code.
 
 Other Powered Up hubs that speak LWP3 (City Hub, BOOST Move Hub) work as well.
 
+New here? Follow [quick_start.md](quick_start.md) to connect and run a first command.
+
 ---
 
 ## Requirements
