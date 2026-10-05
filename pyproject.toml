@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "technic-hub"
+version = "0.1.0"
+description = "Send commands to a LEGO Technic Hub over Bluetooth LE from a host such as an NVIDIA Jetson"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = ["bleak>=1.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23", "black>=24"]
+
+[project.scripts]
+technic-hub = "technic_hub.cli:main"
+
+[tool.setuptools]
+packages = ["technic_hub"]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
