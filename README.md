@@ -120,10 +120,16 @@ newer command on the same port replaced them before they finished.
 See `examples/` for more:
 
 - `basic_usage.py`: status light, battery and position control of one motor.
-- `navigation_hints.py`: drives a two motor vehicle (left motor on A, right on
-  B) from the hint strings computed by the ObjectDetection project (`TURN
-  LEFT`, `GO STRAIGHT`, `STOP`, ...), read one per line from stdin. A watchdog
-  stops the vehicle when no hint arrives for one second.
+- `navigation_hints.py`: drives a steered vehicle (drive motors on A and B,
+  steering on D) from the hint strings computed by the ObjectDetection project
+  (`TURN LEFT`, `GO STRAIGHT`, `STOP`, ...), read one per line from stdin. The
+  steering range is measured and centered at startup. A watchdog stops the
+  vehicle when no hint arrives for one second. Runs on Linux (the Jetson).
+- `navigation_hints_windows.py`: the same on Windows, where hints can also be
+  typed by hand to test the vehicle.
+- `left_circle.py`: steers fully left and drives forward for a set time.
+- `find_steering.py`: spins every motor briefly and reports which port drives
+  the steering, by looking for the motor that stalls at end stops.
 
 ---
 
